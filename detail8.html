@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?q=1280549780">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="animate.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Details</title>
+    <style>
+        *{
+      max-width: 100%;
+    }
+    body {
+      background-color: #e9ecef;
+      font-family: 'Poppins', serif;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: grey;
+      text-decoration: none;
+    }
+
+    .row {
+      grid-row-gap: 15px;
+
+    }
+
+    #forsermons.row {
+      grid-row-gap: 15px;
+      margin-left: 10%;
+      margin-right: 10%;
+
+    }
+
+    p {
+      color: #000;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 72.5%;
+    font-family: 'Roboto', sans-serif;
+}
+#navbar{
+  font-family: 'Roboto', sans-serif;}
+        @media screen and (max-width:100%){
+        #search_form, #profile, .upload{
+     display: none;
+     
+        }
+    }
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #474787;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.nav-link:hover{
+  text-decoration: underline solid #fff 2px;
+  text-underline-offset:0.5em ;
+  transition: .5s;
+  background-color: none;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position:fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+         z-index: 2000;
+        background-color: #474787;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+.footer {
+      background-color: #474787;
+      padding: 20px 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #474787;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #ffffff;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      margin-top: -5px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    .bottom {
+      align-items: bottom;
+      margin-top: 20px;
+      margin-bottom: -10px;
+
+    }
+
+    .bottom center a {
+      color: #ffffff;
+      text-decoration: none;
+
+    }
+
+    .bottom center a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom center span {
+      color: #fff;
+    }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <a href="{% url 'index' %}">
+            <img src="https://i.postimg.cc/sDKHJWtR/creyo-removebg-preview.png" style=" width: 25%; ">
+          </a>
+            
+            <ul class="nav-menu">
+              <li><a class="nav-link"  href="index.html" id="forNav">Home</a></li>
+              <li><a href="service.html" class="nav-link" id="forNav">Service</a></li>
+              <li><a href="addProperty.html" class="nav-link" id="forNav">Add Property</a></li>
+              <li><a href="contact.html" class="nav-link" id="forNav">Contact Us</a></li>
+ 
+              <li><div><a href="login.php" id="forNav" class="nav-link">Login</a></div></li>
+          
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <div class="container-fluid" style="margin-bottom: 10%; margin-top: 8%;">
+       
+        <div class="row">
+          <div class="col-sm-6" style="background-color:lavender;"> <img src="https://i.postimg.cc/P5BBSGs1/nyarut.jpg" alt=""></div>
+          <div class="col-sm-6" >
+            <p style=" font-size: 120%;">
+                The apartement house with different rooms located in Nyarugenge district at KN 164 st, Kigali.  This houses is not only for the family 
+            but also individuals or any other group of people can rent it in case they are willing. It has five rooms including sitting rooms and kitchen.</p>
+            <p style="font-size: 120%;">There is an amazing parking for those who have cars or bike. There is also an amazing big garden with enough backgroud space where the children 
+            can play their games without worrying or being afraid of not havig enough space. Rent is 110,000Rwf/Month </p>
+            <div class="row">
+            <div class="col-sm-4" >
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.postimg.cc/YShPnLFP/tebe.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Sitting Room</h5>
+                  <p class="card-text">The house has big sitting room where you can put your furnatures without worrying about where to place them.</p>
+               
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.postimg.cc/QxJvH3sf/buriri.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Sleeping room</h5>
+                  <p class="card-text">This house has a beautful big sleeping room with enough space.</p>
+                
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="https://i.postimg.cc/LXPbRdNB/btu.png" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title">Kitchen</h5>
+                  <p class="card-text">This house has a beautful big Kitchen with enough space. This is modern kitchen for cooking </p>
+                
+                </div>
+            </div>
+
+        </div>
+        
+        </div>
+       
+        </div>
+        <a href="payRent.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 70%; ">Rent House</a>
+          
+        </div>
+      </div>
+  
+
+
+
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+              <h4>Garagaza</h4>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="addProperty.html">Add Property</a></li>
+    
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>Get Connected</h4>
+              <ul>
+                <li><a href="#">Watsapp group</a></li>
+                <li><a href="#">Facebook group</a></li>
+              
+    
+              </ul>
+            </div>
+            <div class="footer-col">
+              <h4>More</h4>
+              <ul>
+                <li><a href="detail8.html">Details</a></li>
+                <li><a href="payRent.html">Pay Rent</a></li>
+                <li><a href="contact.html">Contact</a></li>
+             
+              </ul>
+            </div>
+            <div class="footer-col">
+              <div class="social-links">
+                <h4 style="margin-top: 10px;">Contact Us</h4>
+                <div class="content">
+                  <form action="" method="POST" class="form-group">
+                    
+                    <div class="email">
+                      <div class="text" style="color: white;">Email *</div>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="msg">
+                      <div class="text" style="color: white;">Message *</div>
+                      <textarea rows="2" class="form-control" id="message" cols="20" name="message" required></textarea>
+                    </div>
+                    <div class="newsletter" style="color: white; margin-top: 3%; padding:3%;">
+                      <input type="checkbox" id="newsletter">Send me monthly newsletter
+                      <br><br>
+                    </div>
+                  
+    
+                    <button type="submit" class="btn btn-primary" value="Submit" onclick="sendContact();"
+                      style="background-color:#ffffff; font-weight: 900; color: #474787; margin-top: 2%;">Send</button>
+    
+                  </form>
+                </div>
+                <h4 style=" margin-bottom: 15px;">follow us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          var fields = {};
+          document.addEventListener("DOMContentLoaded", function () {
+            fields.email = document.getElementById('email');
+            fields.houseNumber = document.getElementById('message');
+            fields.newsletter = document.getElementById('newsletter');
+    
+          }
+          
+          )
+          function isNotEmpty(value) {
+     if (value == null || typeof value == 'undefined' ) return false;
+     return (value.length > 0);
+    }
+    function isEmail(email) {
+     let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+     return regex.test(String(email).toLowerCase());
+    }
+    function isValid() {
+     var valid = true;
+     valid &= fieldValidation(fields.email, isEmail);
+     return valid;
+    }
+    class User {
+     constructor(email, newsletter, message) {
+    
+     this.email = email;
+     this.newsletter = newsletter;
+     this.message = message;
+     }
+    }
+    function sendContact(){
+      if(isValid()){
+        let usr= new User(email.value, message.value, newsletter.checked);
+        prompt('${user.email} Thanks for contacting Us !')
+      }
+      else{
+        prompt('There was an error !')
+      }
+    }
+    
+        </script>
+        <div class="bottom">
+          <center>
+            <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Garagaza</a> |
+            </span>
+            <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+          </center>
+        </div>
+      </footer>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cndjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script >
+        const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    const navLink = document.querySelectorAll(".nav-link");
+    
+    hamburger.addEventListener("click", mobileMenu);
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+    
+    function mobileMenu() {
+        hamburger.classList.toggle("active");
+        navMenu.classList.toggle("active");
+    }
+    
+    function closeMenu() {
+        hamburger.classList.remove("active");
+        navMenu.classList.remove("active");
+    }
+    </script>
+</body>
+</html>

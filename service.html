@@ -1,0 +1,1375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vollkorn&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css?q=1280549780">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="animate.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300i,400" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Service</title>
+    <style>
+         *{
+      max-width: 100%;
+    }
+    body {
+      background-color: #e9ecef;
+      font-family: 'Poppins', serif;
+      max-width: 100%;
+      width: 100%;
+      height: 100%;
+    }
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+
+    a:hover {
+      color: grey;
+      text-decoration: none;
+    }
+
+    .row {
+      grid-row-gap: 15px;
+
+    }
+
+    #forsermons.row {
+      grid-row-gap: 15px;
+      margin-left: 10%;
+      margin-right: 10%;
+
+    }
+
+    p {
+      color: #000;
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+    * {
+        box-sizing: border-box;
+        margin: 0px;
+        padding: 0px;
+        max-width: 100%;
+    }
+
+    img {
+        width: 100%;
+    }
+
+    p {
+        font-size: 16px;
+        font-weight: 400;
+        line-height: 26px;
+        color: #6a6972;
+    }
+
+    .homefirstcont {
+        background: url("../../media/images/overlay.png");
+        width: 100%;
+        height: 100%;
+        background-size: 200px 200px;
+        font-family: 'Roboto', sans-serif;
+        background-attachment: fixed, fixed;
+        background-position: top left, center center;
+        padding: 0;
+    }
+
+    .homefirstcont .two {
+        background: url("../../media/images/overlay.png");
+        background-color: #b8d3d2;
+        background-size: 200px 200px;
+        background-attachment: fixed;
+        background-position: top left, center center;
+    }
+
+    .homefirstcont .first {
+        font-size: 5vw;
+        font-family: 'Roboto', sans-serif;    }
+
+    .homefirstcont .second {
+        font-size: 3.6vw;
+        text-indent: 5%;
+    }
+
+    .homefirstcont .third {
+        font-size: 1.8vw;
+        text-align: center;
+        width: 80%;
+        margin-left: 5%;
+        font-style: italic;
+    }
+
+    .homefirstcont .third::first-letter {
+        font-size: 3vw;
+        color: #474787;
+    }
+
+    @media (max-width: 575px) {
+        .homefirstcont .first {
+            font-size: 7vw;
+        }
+
+        .homefirstcont .second {
+            font-size: 6vw;
+        }
+
+        .homefirstcont .third {
+            font-size: 4vw;
+        }
+
+        .homefirstcont .third::first-letter {
+            font-size: 6vw;
+            color: #474787;
+        }
+    }
+
+
+
+
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+    }
+
+    .sidebar .sidebar-widget {
+        position: relative;
+        width: 100%;
+        margin-bottom: 45px;
+    }
+
+    .sidebar .sidebar-widget h2.sw-title {
+        color: #474787;
+        margin-bottom: 30px;
+        padding-bottom: 15px;
+        border-bottom: 3px double #474787;
+    }
+
+    .sidebar .sidebar-widget .news-list {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .sidebar .news-list .nl-item {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .sidebar .news-list .nl-item .nl-img {
+        width: 100px;
+    }
+
+    .sidebar .news-list .nl-item .nl-img img {
+        width: 100px;
+    }
+
+    .sidebar .news-list .nl-item .nl-title {
+        padding-left: 15px;
+    }
+
+    .sidebar .news-list .nl-item .nl-title a {
+        color: #474787;
+        font-size: 16px;
+        font-weight: 400;
+        transition: all .3s;
+    }
+
+    .sidebar .news-list .nl-item .nl-title a:hover {
+        color: #474787;
+    }
+
+    .sidebar .sidebar-widget .tab-news {
+        position: relative;
+        margin-bottom: 30px;
+    }
+
+    .sidebar .tab-news .nav.nav-pills .nav-link {
+        color: #ffffff;
+        background: #474787;
+        border-radius: 0;
+    }
+
+    .sidebar .tab-news .nav.nav-pills .nav-link:hover,
+    .sidebar .tab-news .nav.nav-pills .nav-link.active {
+        color: #ffffff;
+        background: #474787;
+    }
+
+    .sidebar .tab-news .tab-content {
+        padding: 15px 0 0 0;
+        background: transparent;
+    }
+
+    .sidebar .tab-news .tab-content .container {
+        padding: 0;
+    }
+
+    .sidebar .tab-news .tn-news {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    .sidebar .tab-news .tn-img {
+        width: 100px;
+    }
+
+    .sidebar .tab-news .tn-img img {
+        width: 100px;
+    }
+
+    .sidebar .tab-news .tn-title {
+        padding: 0 0 0 15px;
+    }
+
+    .sidebar .tab-news .tn-title a {
+        color: #474787;
+        font-size: 16px;
+        font-weight: 400;
+        transition: all .3s;
+    }
+
+    .sidebar .tab-news .tn-title a:hover {
+        color: #474787;
+    }
+
+    .sidebar .sidebar-widget .category {
+        position: relative;
+    }
+
+    .sidebar .category ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    .sidebar .category ul li {
+        margin: 0 0 12px 22px;
+    }
+
+    .sidebar .category ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .sidebar .category ul li a {
+        display: inline-block;
+        color: #474787;
+        line-height: 23px;
+    }
+
+    .sidebar .category ul li a:hover {
+        color: #474787;
+    }
+
+    .sidebar .category ul li::before {
+        position: absolute;
+        content: '\f061';
+        font-family: 'Font Awesome 5 Free';
+        font-weight: 900;
+        color: #474787;
+        left: 1px;
+    }
+
+    .sidebar .category ul li span {
+        display: inline-block;
+        float: right;
+    }
+
+    .sidebar .sidebar-widget .tags {
+        position: relative;
+    }
+
+    .sidebar .sidebar-widget .tags a {
+        display: inline-block;
+        margin-bottom: 5px;
+        padding: 5px 10px;
+        color: #474787;
+        background: #ffffff;
+        border: 1px solid #474787;
+        border-radius: 4px;
+    }
+
+    .sidebar .sidebar-widget .tags a:hover {
+        color: #ffffff;
+        background: #474787;
+        border: 1px solid #474787;
+    }
+
+    .sidebar .sidebar-widget .image a {
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .sidebar .sidebar-widget .image img {
+        max-width: 100%;
+        transition: .3s;
+    }
+
+    .sidebar .sidebar-widget .image img:hover {
+        transform: scale(1.1);
+        filter: blur(3px);
+        -webkit-filter: blur(3px);
+    }
+
+
+
+
+
+
+    .single-services {
+        background-color: #fff;
+        -webkit-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
+        -moz-box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
+        box-shadow: 0px 5px 30px 0px rgba(167, 167, 167, 0.16);
+        -webkit-transition: all 0.3s ease-out 0s;
+        -moz-transition: all 0.3s ease-out 0s;
+        -ms-transition: all 0.3s ease-out 0s;
+        -o-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+        padding: 50px 30px;
+        border: 2px solid transparent;
+        border-radius: 8px;
+    }
+
+    @media (max-width: 767px) {
+        .single-services {
+            padding: 20px 20px 30px;
+        }
+    }
+
+    .single-services .services-icon {
+        display: inline-block;
+        position: relative;
+    }
+
+    .single-services .services-icon img {
+        -webkit-transition: all 0.4s ease-out 0s;
+        -moz-transition: all 0.4s ease-out 0s;
+        -ms-transition: all 0.4s ease-out 0s;
+        -o-transition: all 0.4s ease-out 0s;
+        transition: all 0.4s ease-out 0s;
+    }
+
+    .single-services .services-icon .shape-1 {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .single-services .services-icon i {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        font-size: 34px;
+        color: #fff;
+    }
+
+    .single-services .services-content .services-title a {
+        font-size: 26px;
+        font-weight: 700;
+        color: #2E2E2E;
+        -webkit-transition: all 0.3s ease-out 0s;
+        -moz-transition: all 0.3s ease-out 0s;
+        -ms-transition: all 0.3s ease-out 0s;
+        -o-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+    }
+
+    @media only screen and (min-width: 992px) and (max-width: 1199px) {
+        .single-services .services-content .services-title a {
+            font-size: 24px;
+        }
+    }
+
+    @media (max-width: 767px) {
+        .single-services .services-content .services-title a {
+            font-size: 20px;
+        }
+    }
+
+    .single-services .services-content .services-title a:hover {
+        color: #361CC1;
+    }
+
+    .single-services .services-content .text {
+        margin-top: 30px;
+    }
+
+    @media (max-width: 767px) {
+        .single-services .services-content .text {
+            margin-top: 20px;
+        }
+    }
+
+    .single-services .services-content .more {
+        margin-top: 30px;
+        font-size: 16px;
+        font-weight: 400;
+        color: #2E2E2E;
+        -webkit-transition: all 0.3s ease-out 0s;
+        -moz-transition: all 0.3s ease-out 0s;
+        -ms-transition: all 0.3s ease-out 0s;
+        -o-transition: all 0.3s ease-out 0s;
+        transition: all 0.3s ease-out 0s;
+    }
+
+    .single-services .services-content .more i {
+        margin-left: 10px;
+    }
+
+    .single-services .services-content .more:hover {
+        color: #474787;
+    }
+
+    .single-services:hover {
+        border-color: #e2c20b;
+    }
+
+    .single-services:hover .services-icon .shape {
+        -webkit-transform: rotate(250deg);
+        -moz-transform: rotate(250deg);
+        -ms-transform: rotate(250deg);
+        -o-transform: rotate(250deg);
+        transform: rotate(250deg);
+    }
+    /* .footer {
+    background-color:#474787;
+    padding: 20px 0;
+  }
+
+  .footer-col {
+    width: 25%;
+    padding: 0 15px;
+  }
+
+  .footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+  } */
+
+  /* .footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color:#474787;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+  }
+
+  .footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+  } */
+
+  .footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    color: #ffffff;
+    display: block;
+    transition: all 0.3s ease;
+  }
+/* 
+  .footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+  } */
+
+  /* .footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+  } */
+
+  /* .footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+  }
+
+  /*responsive*/
+  /* @media(max-width: 767px) {
+    .footer-col {
+      width: 50%;
+      margin-bottom: 30px;
+    }
+  } */
+
+  /* @media(max-width: 574px) {
+    .footer-col {
+      width: 100%;
+    }
+  }
+
+  .bottom {
+    align-items: bottom;
+    margin-top: 20px;
+    margin-bottom: -10px;
+
+  }  */
+
+  /* .bottom center a {
+    color: #ffffff;
+    text-decoration: none;
+    
+  }
+
+  .bottom center a:hover {
+    text-decoration: underline;
+  }
+
+  .bottom center span {
+    color: #fff;
+  } */
+  .scroll-top {
+  width: 5%;
+  height: 10%;
+  position:fixed;
+  bottom: 5px;
+  left: 95%;
+  background-color: #fff;
+  border: 1px solid #0b6ab8;
+  
+  
+  
+  display: none;
+}
+.scroll-top:hover{
+  background-color: #fff;
+}
+.scroll-top i {
+  display: inline-block;
+  color: #474787 ;
+  
+}
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,500;1,400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    font-size: 72.5%;
+    font-family: 'Roboto', sans-serif;
+}
+#navbar{
+  font-family: 'Roboto', sans-serif;}
+        @media screen and (max-width:100%){
+        #search_form, #profile, .upload{
+     display: none;
+     
+        }
+    }
+
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.header{
+    border-bottom: 1px solid #E2E8F0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    background-color: #474787;
+}
+
+.hamburger {
+    display: none;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #101010;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 5rem;
+}
+
+.nav-link{
+    font-size: 1.6rem;
+    font-weight: 400;
+    color: #fff;
+}
+
+.nav-link:hover{
+  text-decoration: underline solid #fff 2px;
+  text-underline-offset:0.5em ;
+  transition: .5s;
+  background-color: none;
+}
+
+.nav-logo {
+    font-size: 2.1rem;
+    font-weight: 500;
+    color: #482ff7;
+}
+
+@media only screen and (max-width: 768px) {
+    .nav-menu {
+        position:fixed;
+        left: -100%;
+        top: 5rem;
+        flex-direction: column;
+         z-index: 2000;
+        background-color: #474787;
+        width: 100%;
+        border-radius: 10px;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow:
+            0 10px 27px rgba(0, 0, 0, 0.05);
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-item {
+        margin: 2.5rem 0;
+    }
+
+    .hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        -webkit-transform: translateY(8px) rotate(45deg);
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        -webkit-transform: translateY(-8px) rotate(-45deg);
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+.footer {
+      background-color: #474787;
+      padding: 20px 0;
+    }
+
+    .footer-col {
+      width: 25%;
+      padding: 0 15px;
+    }
+
+    .footer-col h4 {
+      font-size: 18px;
+      color: #ffffff;
+      text-transform: capitalize;
+      margin-bottom: 10px;
+      margin-top: 20px;
+      font-weight: 500;
+      position: relative;
+    }
+
+    .footer-col h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -10px;
+      background-color: #474787;
+      height: 2px;
+      box-sizing: border-box;
+      width: 50px;
+    }
+
+    .footer-col ul li:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      font-size: 16px;
+      text-transform: capitalize;
+      color: #ffffff;
+      text-decoration: none;
+      font-weight: 300;
+      color: #ffffff;
+      display: block;
+      transition: all 0.3s ease;
+    }
+
+    .footer-col ul li a:hover {
+      color: #ffffff;
+      padding-left: 8px;
+    }
+
+    .footer-col .social-links a {
+      display: inline-block;
+      height: 40px;
+      width: 40px;
+      background-color: rgba(255, 255, 255, 0.2);
+      margin: 0 10px 10px 0;
+      margin-top: -5px;
+      text-align: center;
+      line-height: 40px;
+      border-radius: 50%;
+      color: #ffffff;
+      transition: all 0.5s ease;
+    }
+
+    .footer-col .social-links a:hover {
+      color: #24262b;
+      background-color: #ffffff;
+    }
+
+    /*responsive*/
+    @media(max-width: 767px) {
+      .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+      }
+    }
+
+    @media(max-width: 574px) {
+      .footer-col {
+        width: 100%;
+      }
+    }
+
+    .bottom {
+      align-items: bottom;
+      margin-top: 20px;
+      margin-bottom: -10px;
+
+    }
+
+    .bottom center a {
+      color: #ffffff;
+      text-decoration: none;
+
+    }
+
+    .bottom center a:hover {
+      text-decoration: underline;
+    }
+
+    .bottom center span {
+      color: #fff;
+    }
+
+
+
+    </style>
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+          <a href="{% url 'index' %}">
+            <img src="https://i.postimg.cc/sDKHJWtR/creyo-removebg-preview.png" style=" width: 25%; ">
+          </a>
+            
+            <ul class="nav-menu">
+              <li><a class="nav-link"  href="index.html" id="forNav">Home</a></li>
+              <li><a href="service.html" class="nav-link" id="forNav">Service</a></li>
+              <li><a href="addProperty.html" class="nav-link" id="forNav">Add Property</a></li>
+              <li><a href="contact.html" class="nav-link" id="forNav">Contact Us</a></li>
+             
+              
+              <li><div><a href="login.php" id="forNav" class="nav-link">Login</a></div></li>
+          
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <section class="container-fluid homefirstcont pt-5 " id="homefirstcont">
+        <div class="row  justify-content-between align-items-center">
+            <div class="col-12 col-sm-4  text-center one">
+                <img src="https://i.postimg.cc/sD0xqRTB/bricks.png" class="img-responsive img-fluid" data-aos="zoom-in-up" data-aos-duration="5000" data-aos-delay="800">
+            </div>
+            <div class="col-12 col-sm-8 bg-white py-4 two" data-aos="fade-left" data-aos-duration="6000" data-aos-delay="1000">
+                <h1 class="second" style="color: #474787;">Our services</h1>
+                <p class="third">At Garagaza, we do help tenants to get houses for rent, pay rent easily, and book for rent by paying it in advance.
+                    we do focus on different categories of people who need houses for rent such as families, individuals, group of people, and apartements seekers
+                </p>
+            </div>
+        </div>
+    </section>
+    
+    <section class="container-fluid bg-light">
+        <div class="row align-items-center" >
+            <div class="col-md-9">
+    
+                <section id="features" class="services-area pt-10" >
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-10">
+                                <div class="section-title text-left pb-10">
+                                    <h3 class="title" style="color: #474787; text-align: center; margin-top: 5%; margin-bottom: 5%; margin-left: 5%;">Houses for rent categories</h3>
+                                </div> <!-- section title -->
+                            </div>
+                        </div> <!-- row -->
+                        <div class="row justify-content-center" >
+                            <div class="col-10 col-md-6 col-lg-4">
+                                <div class="single-services text-center mt-30 " data-wow-duration="1s"
+                                    data-wow-delay="0.2s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1400">
+                                    <div class="services-icon">
+                                        <img src="https://i.postimg.cc/7h67CWLW/skyhouses.jpg" alt="shape">
+    
+                                    </div>
+                                    <div class="services-content mt-30">
+                                        <h4 class="services-title" style="color: #474787;">THE FAMILY HOUSES</h4>
+                                        <p class="text">The family houses for rent are mostly houses with more than one room that are needed by family members 
+                                            This category involves the best houses for hosting big or small family whereby every family can look into the list of those houses
+                                            posted and they get to choose the ones they love most. They are no limited to other houses but this category make it easier for them to select the houses they want without wasting time.
+                                    </div>
+                                </div> <!-- single services -->
+                            </div>
+                            <div class="col-10 col-md-6 col-lg-4" data-aos="fade-left" data-aos-duration="8000" data-aos-delay="1200">
+                                <div class="single-services text-center mt-30 " data-wow-duration="1s"
+                                    data-wow-delay="0.5s">
+                                    <div class="services-icon">
+                                        <img src="https://i.postimg.cc/6qtKzkZM/indivi.jpg" alt="shape">
+    
+                                    </div>
+                                    <div class="services-content mt-30" >
+                                        <h4 class="services-title" style="color: #474787;">HOUSES FOR INDIVIDUAL</h4>
+                                        <p class="text">The houses for individuals available for rent are intended to help those individuals who are looking for houses to rent whereby 
+                                            they can be able to choose suitable houses for renting. Again individuals are not limited toward choosing other houses for rent because no matter what they can easily 
+                                            choose among other houses posted even if they are falling into another category. 
+                                             <!-- through the prayer of salvation. -->
+                                            </p>
+                                    </div>
+                                </div> <!-- single services -->
+                            </div>
+                            <div class="col-10 col-md-6 col-lg-4">
+                                <div class="single-services text-center mt-30 " data-wow-duration="1s"
+                                    data-wow-delay="0.8s" data-aos="fade-left" data-aos-duration="10000" data-aos-delay="1600">
+                                    <div class="services-icon">
+                                        <img src="https://i.postimg.cc/P5BBSGs1/nyarut.jpg" alt="shape">
+    
+                                    </div>
+                                    <div class="services-content mt-30">
+                                        <h4 class="services-title" style="color: #474787;">AVAILABLE APARTEMENTS</h4>
+                                        <p class="text">apartements are mainly for different people either individuals or group of people whereby these apartements can be 
+                                            found in the hotels or alone where they are built, so for those people who are looking for apartements to rent they can easily navigate under 
+                                            the apartements category and get to choose which one to go with or to rent ou. Again there is no limitation to choosing 
+                                            the houses.
+                                             <!-- and the comforting interaction of the
+                                            Holy Spirit with man. -->
+                                        </p>
+    
+                                    </div>
+                                </div> <!-- single services -->
+                            </div>
+                        </div> <!-- row -->
+                    </div> <!-- container -->
+                </section>
+            </div>
+    
+            <div class="col-md-3 bg-white">
+                <div class="">
+                    <div class="sidebar">
+                        <div class="sidebar-widget">
+                            <h2 class="sw-title" style="color: #474787;">categories</h2>
+                            <div class="news-list">
+                                <div class="mt-sm-1 mt-md-4 nl-item">
+                                    <div class="nl-img">
+                                        <img src="https://i.postimg.cc/7h67CWLW/skyhouses.jpg" />
+                                    </div>
+                                    <div class="nl-title" data-aos="fade-up" data-aos-duration="10000" data-aos-delay="1600">
+                                        <a href="">Best Houses the family can rent</a>
+                                    </div>
+                                </div>
+                                <div class="mt-sm-1 mt-md-4 nl-item">
+                                    <div class="nl-img">
+                                        <img src="https://i.postimg.cc/6qtKzkZM/indivi.jpg" />
+                                    </div>
+                                    <div class="nl-title" data-aos="fade-up" data-aos-duration="12000" data-aos-delay="1700">
+                                        <a href="">Best Houses individuals can rent </a>
+                                    </div>
+                                </div>
+                                <div class="mt-sm-1 mt-md-4 nl-item">
+                                    <div class="nl-img">
+                                        <img src="https://i.postimg.cc/P5BBSGs1/nyarut.jpg" />
+                                    </div>
+                                    <div class="nl-title" data-aos="fade-up" data-aos-duration="13000" data-aos-delay="1800">
+                                        <a href="">available apartements for renting</a>
+                                    </div>
+                                </div>
+                                
+                                <!-- <div class="mt-sm-1 mt-md-4 nl-item">
+                                    <div class="nl-img">
+                                        <img src="../../media/images/blog-1.jpg" />
+                                    </div>
+                                    <div class="nl-title">
+                                        <a href="">Lorem ipsum dolor sit amet consec adipis elit</a>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                </div>
+    </section>
+    
+    
+    
+    <section class="services-area pt-10" style="margin-top: -14%;">
+        <div class="container-fluid" style="padding-top: 15%; background-color: rgb(250, 250, 250);">
+    
+            <div class="row justify-content-center">
+                <div class="col-10 col-sm-6 col-md-4" data-aos="fade-right" data-aos-duration="8000" data-aos-delay="900">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/KYSVGT5d/homemood.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30"> 
+                            <p class="text">The family house or group of people house located in Gasabo district at KG 181 st, Kigali.       
+                            </p>
+                            <div>
+                            <p>150000Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail1.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="1000">
+                    <div class="single-services text-center mt-30" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/d3LnmQB2/amaze.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                           
+                            <p class="text">The family house or group of people house located in Nyarugenge district at KN 132 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>180000Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail2.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1000">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/yx1xwW5R/hezahome.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30" >
+                          
+                            <p class="text">The family house or group of people house located in Kicukiro district at KK 121 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>140000Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail3.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+    
+                <div class="col-10 col-sm-6 col-md-4">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s" data-aos="fade-right" data-aos-duration="8000" data-aos-delay="900">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/g2KPw4Bv/ntoya.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                           
+                            <p class="text">The small house for idividual or any other group of people for rent located in Nyarugenge District KK 110 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>90000Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail4.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.5s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1000">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/fTKHmFDT/yanjye.gif" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                           
+                            <p class="text">The small house for idividual or any other group of people for rent located in Gasabo District KG 123 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>80000Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail5.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="1000">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/hPzLP5v5/incompl.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                            
+                            <p class="text">The medium house for idividual or any other group of people for rent located in Kicukiro District KK 98 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>9500Rwf/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail6.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+                        </div>
+                      
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4" data-aos="fade-right" data-aos-duration="8000" data-aos-delay="900">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.2s">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/yxV7p55Y/apart.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                           
+                            <p class="text">The apartement house with different rooms located in Nyarugenge district at KN 78 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>85000Rwf/ Each Roome/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail7.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4" data-aos="fade-left" data-aos-duration="9000" data-aos-delay="1000">
+                    <div class="single-services text-center mt-30" data-wow-duration="1s" data-wow-delay="0.5s">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/P5BBSGs1/nyarut.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30">
+                           
+                            <p class="text">The apartement house with different rooms located in Nyarugenge district at KN 164 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>110000Rwf/ Each Room/ Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="detail8.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+                <div class="col-10 col-sm-6 col-md-4">
+                    <div class="single-services text-center mt-30 " data-wow-duration="1s" data-wow-delay="0.8s" data-aos="fade-right" data-aos-duration="9000" data-aos-delay="1000">
+                        <div class="services-icon">
+                            <img src="https://i.postimg.cc/44BKkb1F/nzakk.jpg" alt="shape">
+    
+                        </div>
+                        <div class="services-content mt-30" >
+                          
+                            <p class="text">The apartement house with different rooms located in Kicukiro district at KK 135 st, Kigali. 
+    
+                                 
+                            </p>
+                            <div>
+                            <p>100000Rwf/Each room/Month</p>
+                            <div style="display: flex; align-items: center;">
+                            <a href="rentform.html" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787; margin-left: 80px;">Rent House</a>
+                            <a href="" class="btn-primary p-2" style="color: #ffffff; background-color:  #474787;  margin-left: 20px;">View Details</a>
+                            </div>
+                           </div>
+    
+    
+                        </div>
+                    </div> <!-- single services -->
+                </div>
+    
+            </div> <!-- row -->
+        </div> <!-- container -->
+       
+        <button class="btn btn-primary scroll-top" data-scroll="up" type="button">
+            <i class="fa fa-chevron-up"></i>
+            </button>   
+    </section>
+    <footer class="footer">
+        <div class="container">
+          <div class="row">
+            <div class="footer-col">
+                <h4>Garagaza</h4>
+                <ul>
+                  <li><a href="index.html">Home</a></li>
+                  <li><a href="service.html">Services</a></li>
+                  <li><a href="addProperty.html">Add Property</a></li>
+      
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>Get Connected</h4>
+                <ul>
+                  <li><a href="#">Watsapp group</a></li>
+                  <li><a href="#">facebook group</a></li>
+                 
+      
+                </ul>
+              </div>
+              <div class="footer-col">
+                <h4>More</h4>
+                <ul>
+                  <li><a href="detail8.html">Details</a></li>
+                  <li><a href="payRent.html">Pay Rent</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+               
+                </ul>
+              </div>
+            <div class="footer-col">
+              <div class="social-links">
+                <h4 style="margin-top: 10px;">Contact Us</h4>
+                <div class="content">
+                  <form action="" method="POST" class="form-group">
+                    <div class="email">
+                      <div class="text" style="color: white;">Email *</div>
+                      <input type="email" class="form-control" id="email" name="email" required>
+                    </div>
+                    <div class="msg">
+                      <div class="text" style="color: white;">Message *</div>
+                      <textarea rows="2" class="form-control" id="message" cols="20" name="message" required></textarea>
+                    </div>
+                    <div class="newsletter" style="color: white; margin-top: 3%; padding:3%;">
+                      <input type="checkbox" id="newsletter">Send me monthly newsletter
+                      <br><br>
+                    </div>
+                  
+    
+                    <button type="submit" class="btn btn-primary" value="Submit" onclick="sendContact();"
+                      style="background-color:#ffffff; font-weight: 900; color: #474787; margin-top: 2%;">Send</button>
+    
+                  </form>
+                </div>
+                <h4 style=" margin-bottom: 15px;">follow us</h4>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <script>
+          var fields = {};
+          document.addEventListener("DOMContentLoaded", function () {
+            fields.email = document.getElementById('email');
+            fields.houseNumber = document.getElementById('message');
+            fields.newsletter = document.getElementById('newsletter');
+    
+          }
+          
+          )
+          function isNotEmpty(value) {
+     if (value == null || typeof value == 'undefined' ) return false;
+     return (value.length > 0);
+    }
+    function isEmail(email) {
+     let regex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+     return regex.test(String(email).toLowerCase());
+    }
+    function isValid() {
+     var valid = true;
+     valid &= fieldValidation(fields.email, isEmail);
+     return valid;
+    }
+    class User {
+     constructor(email, newsletter, message) {
+    
+     this.email = email;
+     this.newsletter = newsletter;
+     this.message = message;
+     }
+    }
+    function sendContact(){
+      if(isValid()){
+        let usr= new User(email.value, message.value, newsletter.checked);
+        prompt('${user.email} Thanks for contacting Us !')
+      }
+      else{
+        prompt('There was an error !')
+      }
+    }
+    
+        </script>
+        <div class="bottom">
+          <center>
+            <span class="credit">Created By <a href="{% url 'index' %}" style="color: #ffffff;">Garagaza</a> |
+            </span>
+            <span class="far fa-copyright"></span><span> 2021 All rights reserved.</span>
+          </center>
+        </div>
+      </footer>
+    
+    
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cndjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>   
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+      <script>
+        AOS.init({
+          duration: 1000,
+          offset: 120,
+          easing: 'ease-in-out'
+        })
+        $(document).ready(function () {
+      $(window).scroll(function () {
+        if ($(this).scrollTop() > 100) {
+          $('.scroll-top').fadeIn();
+        } else {
+          $('.scroll-top').fadeOut();
+        }
+      });
+    
+      $('.scroll-top').click(function () {
+        $("html, body").animate({
+          scrollTop: 0
+        }, 100);
+          return false;
+      });
+    
+    });
+    
+      </script>
+<script >
+    const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+</script>
+    
+</body>
+</html>
